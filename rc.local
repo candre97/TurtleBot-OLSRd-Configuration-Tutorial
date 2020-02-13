@@ -16,6 +16,7 @@ _IP=$(hostname -I) || true
 if [ "$_IP" ]; then
   printf "My IP address is %s\n" "$_IP"
 fi
+# You might have to use different commands for a different OS
 sudo systemctl enable dhcpcd & 
 sudo systemctl start dhcpcd &
 sudo systemctl enable dhcpcd & 

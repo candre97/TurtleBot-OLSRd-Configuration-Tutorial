@@ -9,6 +9,12 @@ I cannot guarantee that all of the steps will be the same if you do not have the
 
 The basic idea of my configuration is to automatically rejoin your local wifi network when your Pi boots up. Then if you want to go into AdHoc mode, you can use the shell scripts provided
 
+If you are interested in reading about Ad-Hoc networks and OLSR, here are some resources to get you started:
+
+- Ad Hoc Networks: https://www.techopedia.com/definition/5868/ad-hoc-network
+- OLSR: http://www.olsr.org/mediawiki/index.php/Main_Page
+- wikipedia!!
+
 Hardware required:
 
 - Raspberry Pi
@@ -34,7 +40,7 @@ make sure to change the IP address for each unique device in this file
 
 - restart_networking.sh - Should reconnect you to your local home wifi network. 
 
-- rc.local : this file runs on boot. I have edited it to start "normal" networking on your Pi at boot, so you will automatically connect to
+- rc.local : this file runs on boot. I have edited it to start "normal" networking on your Pi at boot, so you will automatically connect to a normal (non AdHoc) wifi network
 
 Files for your Ubuntu PC:
 

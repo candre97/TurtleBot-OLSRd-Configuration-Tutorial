@@ -83,8 +83,8 @@ If your USB dongle wireless interface is not wlan1, you will need to edit basica
 Step 5: Copy the Shell Scripts onto your Raspberry Pi
 You can do this using scp, an scp helper like FileZilla, or by creating the files and copy pasting my files into your RPi.
 	
-	the most important file to copy over is /etc/rc.local
-	The lines added in this file will restart your network manager, allowing you to connect to your pi via your home wifi network on boot. 
+*** the most important file to copy over is /etc/rc.local *** 
+The lines added in this file will restart your network manager, allowing you to connect to your pi via your home wifi network on boot. 
 
 Next you can copy over the shell scripts. I have mine in /Documents/shell_scripts
 Just move the entire directory over to Documents, or wherever you want them
@@ -134,7 +134,10 @@ Step 12: Start OLSRd on your PC
 You are all done, you should see this screen: 
 ![](images/olsrd_working.png)
 
+To reconnect to your home wifi network. Run the restart_networking shell scripts. 
 
+If you want to see multi-hopping work without having to go too far, you can decrease the Tx Power on your wifi antenna using the following command:
+iwconfig wlan1 txpower 0
 
 
 

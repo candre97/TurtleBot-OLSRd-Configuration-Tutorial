@@ -1,4 +1,4 @@
-Background: 
+**Background:** 
 I am doing research on Campus at USC's Autonomous Networks Research Group. We're working on coordinated localization of robots related to the DARPA SubT challenge (https://www.darpa.mil/program/darpa-subterranean-challenge)
 In order to allow devices to communicate over longer distance and multiple hops, naturally we had to set up a mesh network. 
 The one in this tutorial is WiFi based, but I am definitely interested in replicating this using Radios. 
@@ -16,7 +16,7 @@ If you are interested in reading about Ad-Hoc networks and OLSR, here are some r
 
 ---------------- Tutorial on how to setup Raspberry Pi with OLSRd mesh network ---------------
 
-Hardware required:
+**Hardware required:**
 
 - Raspberry Pi
 
@@ -30,7 +30,7 @@ Hardware required:
 
 - PC (I was using Ubuntu 18.04)
 
-Description of Files:
+**Description of Files:**
 
 Files for the RPi:
 
@@ -52,7 +52,7 @@ Files for your Ubuntu PC:
 - pc_start_olsrd.sh : Once you have configured your interface using config_ad_hoc.sh, you can run this to start olsrd
 
 
-Step 1: Raspbian Setup
+**Step 1: Raspbian Setup**
 
 Follow the guide on this webpage : 
 
@@ -66,7 +66,7 @@ There are tons of guides on how to do this online. Here is one that I find is pr
 
 Also at this point, you should change the hostname of your raspberry pi. You will need to do this if you plan on having more than one RPi in your mesh network. 
 
-Step 2: SSH into your Pi
+**Step 2: SSH into your Pi**
 
 	username pi
 	password turtlebot
@@ -79,7 +79,7 @@ Feel free to change your pi password. Open the RPi settings using
 
 	sudo raspi-config
 
-Step 3: Install OLSRd 
+**Step 3: Install OLSRd**
 Once you are ssh'd into your Raspberry Pi and connected to your WiFi network, run the following commands: 
 
 	sudo apt-get update
@@ -87,7 +87,8 @@ Once you are ssh'd into your Raspberry Pi and connected to your WiFi network, ru
 	
 resource: https://www.raspberrypi.org/forums/viewtopic.php?t=103550
 
-Step 4: Figure out the name of your WiFi interface related to your USB WiFi dongle. 
+**Step 4: Figure out the name of your WiFi interface related to your USB WiFi dongle.**
+
 to do this you can run this command with the WiFi dongle disconnected:
 	
 	iwconfig
@@ -102,7 +103,7 @@ On my RPi 3B+, a new wireless interface showed up: wlan1. This is what I used in
 
 NOTE: If your USB dongle wireless interface is not wlan1, you will need to edit basically all of the files that I have attached here. Just replace wlan1 with the name of your wireless interface. 
 
-Step 5: Copy the Shell Scripts onto your Raspberry Pi
+**Step 5: Copy the Shell Scripts onto your Raspberry Pi**
 You can do this using scp, an scp helper like FileZilla, or by creating the files and copy pasting my files into your RPi.
 	
 	*** the most important file to copy over is /etc/rc.local *** 
@@ -119,21 +120,21 @@ edit the /etc/olsrd/olsrd.conf file provided. I attached mine, but yours could b
 
 I tried to make every edit to the file easy to find. 
 
-Step 6: Make the shell scripts executable
+**Step 6: Make the shell scripts executable**
 On your RPi, navigate to the shell scripts directory. 
 run the command:
 
 	sudo chmod +x <file_name> 
 for each of the shell scripts. this way you will be able to use them. 
 
-Step 7: Copy the files in pc_scripts to your Ubuntu PC and make them executable
+**Step 7: Copy the files in pc_scripts to your Ubuntu PC and make them executable**
 download the zip of this repo, or do a git clone ...
 
 To make files executable:
 
 	sudo chmod +x <file_name> 
 
-Step 8: Run the config_ad_hoc.sh on your RPi
+**Step 8: Run the config_ad_hoc.sh on your RPi**
 from the shell scripts directory, run this command:
 
 	./config_ad_hoc.sh
@@ -142,12 +143,12 @@ at this point you will lose your ssh connection to your pi because your pi and y
 
 Do this for all of the Pi's you want on your mesh network. 
 
-Step 9: Run pc_adhoc.sh
+**Step 9: Run pc_adhoc.sh**
 Note: make sure that you edit this file and input your wireless interface name as we did for the RPi in previous steps
 
 	./pc_adhoc.sh
 
-Step 10: SSH back into you RPi's
+**Step 10: SSH back into you RPi's**
 You will need to use the Pi's IP address that you assigned it. 
 
 ssh pi@pi'sIPAddress
@@ -155,12 +156,12 @@ For instance, to ssh into the pi at the IP address I have mine configured to in 
 
 	ssh pi@192.168.7.3
 
-Step 11: Start OLSRd on your Pi's
+**Step 11: Start OLSRd on your Pi's**
 from the pi's shell scripts director
 
 	./start_olsrd.sh
 
-Step 12: Start OLSRd on your PC
+**Step 12: Start OLSRd on your PC**
 
 	./pc_start_olsrd.sh
 

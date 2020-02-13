@@ -5,6 +5,7 @@ sudo systemctl stop dhcpcd
 sudo iwconfig wlan1 mode Ad-Hoc
 
 # Use your own interface name if its not wlan1
+# you can change the name of your network here
 sudo iwconfig wlan1 essid "TurtleAdHoc"
 
 ###############################################

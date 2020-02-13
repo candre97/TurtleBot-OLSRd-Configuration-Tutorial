@@ -1,5 +1,3 @@
-Tutorial on how to setup Raspberry Pi with OLSRd mesh network
-
 Background: 
 I am doing research on Campus at USC's Autonomous Networks Research Group. We're working on coordinated localization of robots related to the DARPA SubT challenge (https://www.darpa.mil/program/darpa-subterranean-challenge)
 In order to allow devices to communicate over longer distance and multiple hops, naturally we had to set up a mesh network. 
@@ -14,6 +12,9 @@ If you are interested in reading about Ad-Hoc networks and OLSR, here are some r
 - Ad Hoc Networks: https://www.techopedia.com/definition/5868/ad-hoc-network
 - OLSR: http://www.olsr.org/mediawiki/index.php/Main_Page
 - wikipedia!!
+
+
+---------------- Tutorial on how to setup Raspberry Pi with OLSRd mesh network ---------------
 
 Hardware required:
 

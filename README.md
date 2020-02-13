@@ -11,17 +11,17 @@ The basic idea of my configuration is to automatically rejoin your local wifi ne
 
 Hardware required:
 
--- Raspberry Pi
+- Raspberry Pi
 
--- MicroSD card
+- MicroSD card
 
--- Wifi USB dongle. The one I used is available on Amazon Prime for about $10
+- Wifi USB dongle. The one I used is available on Amazon Prime for about $10
 
 	https://www.amazon.com/Wifi-Antenna-Raspberry-Pi-Instructions/dp/B00H95C0A2?ref_=ast_bbp_dp
 	you need 1 per RPi + 1 for your laptop 
--- Micro USB to power your Raspberry Pi
+- Micro USB to power your Raspberry Pi
 
--- PC (I was using Ubuntu 18.04)
+- PC (I was using Ubuntu 18.04)
 
 Description of Files:
 

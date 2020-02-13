@@ -53,13 +53,16 @@ Files for your Ubuntu PC:
 
 
 Step 1: Raspbian Setup
+
 Follow the guide on this webpage : 
-http://emanual.robotis.com/docs/en/platform/turtlebot3/raspberry_pi_3_setup/#install-linux-based-on-raspbian
+
+	http://emanual.robotis.com/docs/en/platform/turtlebot3/raspberry_pi_3_setup/#install-linux-based-on-raspbian
 
 If you would like to setup your Raspberry Pi in Headless mode, all you need to do is configure your WiFi settings and allow for ssh. This is easy to do if your PC is running Ubuntu
 
 There are tons of guides on how to do this online. Here is one that I find is pretty clear:
-https://howtoraspberrypi.com/how-to-raspberry-pi-headless-setup/
+
+	https://howtoraspberrypi.com/how-to-raspberry-pi-headless-setup/
 
 Also at this point, you should change the hostname of your raspberry pi. You will need to do this if you plan on having more than one RPi in your mesh network. 
 
@@ -81,34 +84,39 @@ Once you are ssh'd into your Raspberry Pi and connected to your WiFi network, ru
 
 	sudo apt-get update
 	sudo apt-get install olsrd
+	
 resource: https://www.raspberrypi.org/forums/viewtopic.php?t=103550
 
 Step 4: Figure out the name of your WiFi interface related to your USB WiFi dongle. 
 to do this you can run this command with the WiFi dongle disconnected:
-iwconfig
+	
+	iwconfig
 
 On my RPi 3B+, the only wireless interface available was wlan0
 
 After plugging in the WiFi dongle, run the command
-iwconfig
+
+	iwconfig
 
 On my RPi 3B+, a new wireless interface showed up: wlan1. This is what I used in all of my configuration files
 
-If your USB dongle wireless interface is not wlan1, you will need to edit basically all of the files that I have attached here. Just replace wlan1 with the name of your wireless interface. 
-
+NOTE: If your USB dongle wireless interface is not wlan1, you will need to edit basically all of the files that I have attached here. Just replace wlan1 with the name of your wireless interface. 
 
 Step 5: Copy the Shell Scripts onto your Raspberry Pi
 You can do this using scp, an scp helper like FileZilla, or by creating the files and copy pasting my files into your RPi.
 	
-*** the most important file to copy over is /etc/rc.local *** 
-The lines added in this file will restart your network manager, allowing you to connect to your pi via your home wifi network on boot. 
+	*** the most important file to copy over is /etc/rc.local *** 
+	The lines added in this file will restart your network manager, allowing you to connect to your pi via your home wifi network on boot. 
 
 Next you can copy over the shell scripts. I have mine in /Documents/shell_scripts
 Just move the entire directory over to Documents, or wherever you want them
--- in the shell script config_ad_hoc.sh, make sure to give each device a unique IP address in the same subnet
+
+	-- in the shell script config_ad_hoc.sh, make sure to give each device a unique IP address in the same subnet
 
 edit the /etc/olsrd/olsrd.conf file provided. I attached mine, but yours could be different depending on the subnet or IP addresses you want to use.  I indicated in comments in this file where I made changes and instructions on what changes you might have to make. 
-you can search in the provided file for "EDIT MADE HERE"
+
+	you can search in the provided file for "EDIT MADE HERE"
+
 I tried to make every edit to the file easy to find. 
 
 Step 6: Make the shell scripts executable

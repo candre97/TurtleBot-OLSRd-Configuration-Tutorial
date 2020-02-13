@@ -10,12 +10,16 @@ I cannot guarantee that all of the steps will be the same if you do not have the
 The basic idea of my configuration is to automatically rejoin your local wifi network when your Pi boots up. Then if you want to go into AdHoc mode, you can use the shell scripts provided
 
 Hardware required:
--- Raspberry Pi 
+-- Raspberry Pi
+
 -- MicroSD card
+
 -- Wifi USB dongle. The one I used is available on Amazon Prime for about $10
+
 	https://www.amazon.com/Wifi-Antenna-Raspberry-Pi-Instructions/dp/B00H95C0A2?ref_=ast_bbp_dp
 	you need 1 per RPi + 1 for your laptop 
 -- Micro USB to power your Raspberry Pi
+
 -- PC (I was using Ubuntu 18.04)
 
 Description of Files:

@@ -138,31 +138,3 @@ To reconnect to your home wifi network. Run the restart_networking shell scripts
 
 If you want to see multi-hopping work without having to go too far, you can decrease the Tx Power on your wifi antenna using the following command:
 iwconfig wlan1 txpower 0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

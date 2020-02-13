@@ -10,6 +10,7 @@ I cannot guarantee that all of the steps will be the same if you do not have the
 The basic idea of my configuration is to automatically rejoin your local wifi network when your Pi boots up. Then if you want to go into AdHoc mode, you can use the shell scripts provided
 
 Hardware required:
+
 -- Raspberry Pi
 
 -- MicroSD card
